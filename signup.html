@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+         a{
+            text-decoration: none;
+            size: 50px;
+            font-weight: bold;
+            
+            
+        }
+        form{
+    background-color: #dadadaf8;
+    box-shadow: 10px rgba(70, 70, 70, 0.1);
+    padding: 60px;
+    border-radius: 10px;
+    align-content: center;
+    align-self: center;
+    width: 610px;
+    margin-left: 400px;
+}
+    .signup{
+    border: 2px solid black;
+    padding: 20px;
+}
+.form-container {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    
+  
+}
+
+.captcha-box {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.refresh-btn {
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+    </style>
+<div class="forms">
+    <form action="">
+        <!---------signup form------------------->
+            <div class="signup">
+                <form style="padding: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 350px height: 10px;";>
+                    <h2 style="color: #0e2946; text-align: center; margin-bottom: 25px;">SignUp</h2>
+                    <div style="margin-bottom: 20px;">
+                        <label for="signup-name" style="display: block; margin-bottom: 8px; color: #333; font-weight: bold;">Name</label>
+                        <input type="text" id="signup-name" placeholder="Enter your name" style="width: calc(100% - 20px); padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="signup-email" style="display: block; margin-bottom: 8px; color: #333; font-weight: bold;">Email</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email" style="width: calc(100% - 20px); padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="signup-password" style="display: block; margin-bottom: 8px; color: #333; font-weight: bold;">New Password</label>
+                        <input type="password" id="signup-password" placeholder="Enter your new password" style="width: calc(100% - 20px); padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="signup-confirm-password" style="display: block; margin-bottom: 8px; color: #333; font-weight: bold;">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" placeholder="Confirm your password" style="width: calc(100% - 20px); padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div class="form-container">
+                        <form id="captcha-form">
+                            <center><div class="captcha-box" id="captcha-text">AB12X</div><br>
+                            <button type="button" class="refresh-btn" onclick="generateCaptcha()">Refresh</button><br>
+                            <input type="text" id="captcha-input" class="input-box" placeholder="Enter CAPTCHA">
+                            <br><br>
+                            <button type="submit">Submit</button></center>
+                        </form>
+                        <p id="result-message"></p>
+                        <script>function generateCaptcha() {
+                            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                            let captcha = "";
+                            for (let i = 0; i < 5; i++) {
+                                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                            }
+                            document.getElementById("captcha-text").innerText = captcha;
+                        }
+                        </script>
+                    
+                    
+                    <button type="submit" style="background-color: rgb(255, 255, 255); color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; "><a href="index.html">SignUp</a></button>
+                    <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+                        Already have an account? <a href="signin.html" onclick="showLoginForm()" style="color: #0c5fb8; text-decoration: none;">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
